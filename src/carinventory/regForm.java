@@ -8,6 +8,7 @@ package carinventory;
 import carinventory.loginForm;
 import config.dbConnector;
 import config.passwordHasher;
+import java.awt.Color;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -102,7 +103,7 @@ public class regForm extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 274, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(22, 22, 22))
         );
         jPanel2Layout.setVerticalGroup(
@@ -115,28 +116,99 @@ public class regForm extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
+        fn.setFont(new java.awt.Font("Tw Cen MT", 2, 14)); // NOI18N
+        fn.setForeground(new java.awt.Color(102, 102, 102));
+        fn.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        fn.setText("Enter Firstname");
+        fn.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                fnFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                fnFocusLost(evt);
+            }
+        });
+
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Tw Cen MT", 3, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Last Name :");
 
+        ln.setFont(new java.awt.Font("Tw Cen MT", 2, 14)); // NOI18N
+        ln.setForeground(new java.awt.Color(102, 102, 102));
+        ln.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ln.setText("Enter Lastname");
+        ln.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                lnFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                lnFocusLost(evt);
+            }
+        });
+        ln.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lnActionPerformed(evt);
+            }
+        });
+
         jLabel5.setFont(new java.awt.Font("Tw Cen MT", 3, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Email :");
+
+        em.setFont(new java.awt.Font("Tw Cen MT", 2, 14)); // NOI18N
+        em.setForeground(new java.awt.Color(102, 102, 102));
+        em.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        em.setText("Email address");
+        em.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emFocusLost(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tw Cen MT", 3, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("User Name:");
 
+        un.setFont(new java.awt.Font("Tw Cen MT", 2, 14)); // NOI18N
+        un.setForeground(new java.awt.Color(102, 102, 102));
+        un.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        un.setText("Enter Username");
+        un.setToolTipText("");
+        un.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                unFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                unFocusLost(evt);
+            }
+        });
+
         jLabel7.setFont(new java.awt.Font("Tw Cen MT", 3, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Password :");
+
+        ps.setFont(new java.awt.Font("Tw Cen MT", 2, 14)); // NOI18N
+        ps.setForeground(new java.awt.Color(102, 102, 102));
+        ps.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ps.setText("Password");
+        ps.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                psFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                psFocusLost(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Tw Cen MT", 3, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Account Type :");
 
-        ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "User" }));
+        ut.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Admin", "Cashier" }));
         ut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 utActionPerformed(evt);
@@ -145,7 +217,6 @@ public class regForm extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(0, 153, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-register-30.png"))); // NOI18N
         jButton2.setText("Register");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +231,6 @@ public class regForm extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 153, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-cancel-30.png"))); // NOI18N
         jButton1.setText("Cancel");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -197,13 +267,15 @@ public class regForm extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(ut, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(ps, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(un, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(em, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(un, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(27, 27, 27))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(em, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(91, 91, 91))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -233,11 +305,14 @@ public class regForm extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ut, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -249,7 +324,7 @@ public class regForm extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,8 +332,8 @@ public class regForm extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 800, 610));
@@ -314,6 +389,90 @@ public class regForm extends javax.swing.JFrame {
         lf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void fnFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fnFocusGained
+        if(fn.getText().equals("Enter Firstname"))
+        {
+            fn.setText("");
+            fn.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_fnFocusGained
+
+    private void fnFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fnFocusLost
+         if(fn.getText().equals(""))
+        {
+            fn.setText("Enter Firstname");
+            fn.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_fnFocusLost
+
+    private void lnFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lnFocusGained
+        if(ln.getText().equals("Enter Lastname"))
+        {
+            ln.setText("");
+            ln.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_lnFocusGained
+
+    private void lnFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lnFocusLost
+          if(ln.getText().equals(""))
+        {
+            ln.setText("Enter Lastname");
+            ln.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_lnFocusLost
+
+    private void lnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lnActionPerformed
+
+    private void emFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emFocusGained
+        if(em.getText().equals("Email address"))
+        {
+            em.setText("");
+            em.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_emFocusGained
+
+    private void emFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emFocusLost
+         if(em.getText().equals(""))
+        {
+            em.setText("Email address");
+            em.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_emFocusLost
+
+    private void unFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_unFocusGained
+        if(un.getText().equals("Enter Username"))
+        {
+           un.setText("");
+            un.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_unFocusGained
+
+    private void unFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_unFocusLost
+         if(un.getText().equals(""))
+        {
+            un.setText("Enter Username");
+            un.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_unFocusLost
+
+    private void psFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_psFocusGained
+        if(ps.getText().equals("Password"))
+        {
+            ps.setText("");
+            ps.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_psFocusGained
+
+    private void psFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_psFocusLost
+        if(ps.getText().equals(""))
+        {
+            ps.setText("Password");
+            ps.setForeground(new Color(102,102,102));
+        }
+    }//GEN-LAST:event_psFocusLost
    
     /**
      * @param args the command line arguments

@@ -14,7 +14,8 @@ import config.dbConnector;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import user.usersForm;
+import admin.ManageUser;
+import java.awt.Color;
 
 /**
  *
@@ -28,6 +29,8 @@ public class createUserForm extends javax.swing.JFrame {
     public createUserForm() {
         initComponents();
     }
+       Color navcolor = new Color(255,255,255);
+       Color hovercolor = new Color(0,204,0);
 public boolean duplicateCheck(){
     
         dbConnector dbc = new dbConnector();
@@ -186,61 +189,109 @@ public boolean updateCheck(){
         uid.setBackground(new java.awt.Color(153, 153, 153));
         uid.setEnabled(false);
 
-        add.setBackground(new java.awt.Color(0, 204, 0));
+        add.setBackground(new java.awt.Color(255, 255, 255));
         add.setFont(new java.awt.Font("Bell MT", 1, 11)); // NOI18N
         add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-add-30.png"))); // NOI18N
         add.setText("ADD");
+        add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addMouseExited(evt);
+            }
+        });
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
             }
         });
 
-        delete.setBackground(new java.awt.Color(0, 204, 51));
+        delete.setBackground(new java.awt.Color(255, 255, 255));
         delete.setFont(new java.awt.Font("Bell MT", 1, 11)); // NOI18N
         delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-30.png"))); // NOI18N
         delete.setText("DELETE");
+        delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteMouseExited(evt);
+            }
+        });
         delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteActionPerformed(evt);
             }
         });
 
-        cancel.setBackground(new java.awt.Color(0, 204, 51));
+        cancel.setBackground(new java.awt.Color(255, 255, 255));
         cancel.setFont(new java.awt.Font("Bell MT", 1, 11)); // NOI18N
         cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-cancel-30.png"))); // NOI18N
         cancel.setText("CANCEL");
+        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cancelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cancelMouseExited(evt);
+            }
+        });
         cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cancelActionPerformed(evt);
             }
         });
 
-        update.setBackground(new java.awt.Color(0, 204, 51));
+        update.setBackground(new java.awt.Color(255, 255, 255));
         update.setFont(new java.awt.Font("Bell MT", 1, 11)); // NOI18N
         update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-update-30.png"))); // NOI18N
         update.setText("UPDATE");
         update.setEnabled(false);
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                updateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                updateMouseExited(evt);
+            }
+        });
         update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateActionPerformed(evt);
             }
         });
 
-        clear.setBackground(new java.awt.Color(0, 204, 51));
+        clear.setBackground(new java.awt.Color(255, 255, 255));
         clear.setFont(new java.awt.Font("Bell MT", 1, 11)); // NOI18N
         clear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-clear-30.png"))); // NOI18N
         clear.setText("CLEAR");
+        clear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                clearMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                clearMouseExited(evt);
+            }
+        });
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
             }
         });
 
-        refresh.setBackground(new java.awt.Color(0, 204, 51));
+        refresh.setBackground(new java.awt.Color(255, 255, 255));
         refresh.setFont(new java.awt.Font("Bell MT", 1, 11)); // NOI18N
         refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-refresh-30.png"))); // NOI18N
         refresh.setText("REFRESH");
+        refresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                refreshMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                refreshMouseExited(evt);
+            }
+        });
         refresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshActionPerformed(evt);
@@ -408,7 +459,7 @@ public boolean updateCheck(){
                 + "VALUES('"+fn.getText()+"','"+ln.getText()+"','"+em.getText()+"','"+un.getText()+"','"+ps.getText()+"','"+ut.getSelectedItem()+"','"+us.getSelectedItem()+"')"))
         {
             JOptionPane.showMessageDialog(null,"Inserted Sucessfull!");
-            usersForm uf = new usersForm();
+            ManageUser uf = new ManageUser();
             uf.setVisible(true);
             this.dispose();
         }else{
@@ -435,7 +486,7 @@ public boolean updateCheck(){
     }//GEN-LAST:event_refreshActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        usersForm usf = new usersForm();
+        ManageUser usf = new ManageUser();
         usf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_cancelActionPerformed
@@ -462,7 +513,7 @@ public boolean updateCheck(){
                + "u_password = '"+ps.getText()+"',u_type = '"+ut.getSelectedItem()+"',"
                + "u_status = '"+us.getSelectedItem()+"' WHERE u_id = '"+uid.getText()+"' ");
             
-            usersForm uf = new usersForm();
+            ManageUser uf = new ManageUser();
             uf.setVisible(true);
             this.dispose();
         }
@@ -470,8 +521,56 @@ public boolean updateCheck(){
     }//GEN-LAST:event_updateActionPerformed
 
     private void psActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_psActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_psActionPerformed
+
+    private void addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseEntered
+        add.setBackground(hovercolor);
+    }//GEN-LAST:event_addMouseEntered
+
+    private void addMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseExited
+         add.setBackground(navcolor);
+    }//GEN-LAST:event_addMouseExited
+
+    private void deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseEntered
+        delete.setBackground(hovercolor);
+    }//GEN-LAST:event_deleteMouseEntered
+
+    private void deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseExited
+       delete.setBackground(navcolor);
+    }//GEN-LAST:event_deleteMouseExited
+
+    private void cancelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseEntered
+      cancel.setBackground(hovercolor);
+    }//GEN-LAST:event_cancelMouseEntered
+
+    private void cancelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cancelMouseExited
+      cancel.setBackground(navcolor);
+    }//GEN-LAST:event_cancelMouseExited
+
+    private void updateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseEntered
+       update.setBackground(hovercolor);
+    }//GEN-LAST:event_updateMouseEntered
+
+    private void updateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseExited
+       update.setBackground(navcolor);
+    }//GEN-LAST:event_updateMouseExited
+
+    private void clearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseEntered
+        clear.setBackground(hovercolor);
+    }//GEN-LAST:event_clearMouseEntered
+
+    private void clearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseExited
+        clear.setBackground(navcolor);
+    }//GEN-LAST:event_clearMouseExited
+
+    private void refreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseEntered
+        refresh.setBackground(hovercolor);
+    }//GEN-LAST:event_refreshMouseEntered
+
+    private void refreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseExited
+        refresh.setBackground(navcolor);
+    }//GEN-LAST:event_refreshMouseExited
 
     /**
      * @param args the command line arguments
