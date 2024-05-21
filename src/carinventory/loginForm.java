@@ -14,6 +14,7 @@ import java.awt.Color;
 import java.security.NoSuchAlgorithmException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 import javafx.scene.control.CheckBox;
 import javax.swing.JOptionPane;
 import user.userDashboard;
@@ -322,6 +323,9 @@ public class loginForm extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null,"INVALED ACCOUNT!");
         }
+       
+    
+    
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
