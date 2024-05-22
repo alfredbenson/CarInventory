@@ -55,13 +55,12 @@ public class selectProducts extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         acc_name1 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         pTable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -71,39 +70,16 @@ public class selectProducts extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel2.setLayout(null);
+        jPanel2.setBackground(new java.awt.Color(153, 153, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        acc_name1.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        acc_name1.setForeground(new java.awt.Color(255, 255, 255));
+        acc_name1.setFont(new java.awt.Font("Wide Latin", 1, 18)); // NOI18N
         acc_name1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         acc_name1.setText("SELECT PRODUCT");
-        jPanel2.add(acc_name1);
-        acc_name1.setBounds(50, 10, 170, 40);
+        jPanel2.add(acc_name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 380, 40));
 
-        jPanel7.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel7MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 106, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 39, Short.MAX_VALUE)
-        );
-
-        jPanel2.add(jPanel7);
-        jPanel7.setBounds(735, 12, 106, 39);
-
-        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel3.setLayout(null);
+        jPanel3.setBackground(new java.awt.Color(102, 102, 0));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,8 +96,7 @@ public class selectProducts extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(pTable);
 
-        jPanel3.add(jScrollPane1);
-        jScrollPane1.setBounds(30, 70, 650, 380);
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 660, 380));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("SELECT");
@@ -130,8 +105,7 @@ public class selectProducts extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1);
-        jButton1.setBounds(30, 30, 80, 23);
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 80, -1));
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setText("CANCEL");
@@ -145,25 +119,20 @@ public class selectProducts extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2);
-        jButton2.setBounds(120, 30, 80, 23);
+        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 80, -1));
 
-        jPanel2.add(jPanel3);
-        jPanel3.setBounds(50, 70, 700, 460);
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 700, 460));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("BACK");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setText("BACK");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
+                jLabel1MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(650, 20, 86, 17);
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 560));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 560));
 
         pack();
         setLocationRelativeTo(null);
@@ -185,12 +154,6 @@ public class selectProducts extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formWindowActivated
 
-    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
-         loginForm lf = new loginForm();
-        lf.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jPanel7MouseClicked
-
     private void pTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pTableMouseClicked
          int rowIndex = pTable.getSelectedRow();
 
@@ -205,12 +168,6 @@ public class selectProducts extends javax.swing.JFrame {
              this.dispose();
         }
     }//GEN-LAST:event_pTableMouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-       products p = new products();
-        p.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         products p = new products();
@@ -239,6 +196,12 @@ public class selectProducts extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+         products p = new products();
+        p.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -291,10 +254,9 @@ public class selectProducts extends javax.swing.JFrame {
     private javax.swing.JLabel acc_name1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable pTable;
     // End of variables declaration//GEN-END:variables

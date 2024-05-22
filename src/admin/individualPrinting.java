@@ -4,6 +4,7 @@ package admin;
 import admin.ManageUser;
 import admin.ManageUser;
 import config.PanelPrinter;
+import java.awt.Color;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -29,6 +30,8 @@ public class individualPrinting extends javax.swing.JFrame {
     public individualPrinting() {
         initComponents();
     }
+     Color navcolor = new Color(102,102,102);
+     Color hovercolor = new Color(0,204,0);
     public  ImageIcon ResizeImage(String ImagePath, byte[] pic, JLabel label) {
     ImageIcon MyImage = null;
         if(ImagePath !=null){
@@ -78,11 +81,12 @@ public class individualPrinting extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         ut = new javax.swing.JLabel();
         image = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        B = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
@@ -151,6 +155,7 @@ public class individualPrinting extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Panadtaran San Fernando , Cebu");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("CAR INVENTORY");
 
@@ -284,26 +289,53 @@ public class individualPrinting extends javax.swing.JFrame {
                 .addGroup(pageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(ut, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(234, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
             .addGroup(pageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pageLayout.createSequentialGroup()
                     .addGap(10, 10, 10)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(563, Short.MAX_VALUE)))
+                    .addContainerGap(413, Short.MAX_VALUE)))
         );
 
         jPanel1.add(page);
-        page.setBounds(30, 110, 710, 600);
+        page.setBounds(30, 80, 710, 450);
 
-        jButton2.setFont(new java.awt.Font("Tw Cen MT", 1, 12)); // NOI18N
-        jButton2.setText("PRINT");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        B.setBackground(new java.awt.Color(102, 102, 102));
+        B.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(0, 204, 204), new java.awt.Color(0, 255, 0), null, null));
+        B.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BMouseExited(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(670, 710, 73, 23);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel12.setText("PRINT");
+
+        javax.swing.GroupLayout BLayout = new javax.swing.GroupLayout(B);
+        B.setLayout(BLayout);
+        BLayout.setHorizontalGroup(
+            BLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel12)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+        BLayout.setVerticalGroup(
+            BLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel12)
+                .addContainerGap())
+        );
+
+        jPanel1.add(B);
+        B.setBounds(640, 550, 100, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -313,25 +345,32 @@ public class individualPrinting extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-     JPanel myPanel = new JPanel();    
-     PanelPrinter pPrint = new PanelPrinter(page);
-     pPrint.printPanel();
-             
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
          ManageUser mu = new ManageUser();
         mu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void BMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BMouseClicked
+       JPanel myPanel = new JPanel();    
+     PanelPrinter pPrint = new PanelPrinter(page);
+     pPrint.printPanel();
+    }//GEN-LAST:event_BMouseClicked
+
+    private void BMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BMouseEntered
+         B.setBackground(hovercolor);
+    }//GEN-LAST:event_BMouseEntered
+
+    private void BMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BMouseExited
+         B.setBackground(navcolor);
+    }//GEN-LAST:event_BMouseExited
 
     /**
      * @param args the command line arguments
@@ -369,13 +408,14 @@ public class individualPrinting extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel B;
     public javax.swing.JLabel em;
     public javax.swing.JLabel fn;
     public javax.swing.JLabel image;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

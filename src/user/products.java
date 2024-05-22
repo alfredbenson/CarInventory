@@ -53,9 +53,6 @@ public class products extends javax.swing.JFrame {
         add = new javax.swing.JButton();
         update = new javax.swing.JButton();
         delete = new javax.swing.JButton();
-        acc_name1 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         pid = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -71,6 +68,8 @@ public class products extends javax.swing.JFrame {
         odate = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         quan = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -80,7 +79,7 @@ public class products extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 0));
         jPanel2.setLayout(null);
 
         jPanel5.setBackground(new java.awt.Color(102, 102, 102));
@@ -105,6 +104,11 @@ public class products extends javax.swing.JFrame {
 
         delete.setFont(new java.awt.Font("Tw Cen MT", 1, 14)); // NOI18N
         delete.setText("DELETE");
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -146,46 +150,7 @@ public class products extends javax.swing.JFrame {
         jPanel2.add(jPanel5);
         jPanel5.setBounds(60, 70, 210, 460);
 
-        acc_name1.setFont(new java.awt.Font("Bell MT", 1, 18)); // NOI18N
-        acc_name1.setForeground(new java.awt.Color(255, 255, 255));
-        acc_name1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        acc_name1.setText("PRODUCTS");
-        jPanel2.add(acc_name1);
-        acc_name1.setBounds(60, 20, 140, 40);
-
-        jPanel7.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel7MouseClicked(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("BACK");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel2.add(jPanel7);
-        jPanel7.setBounds(735, 12, 106, 39);
-
-        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel3.setBackground(new java.awt.Color(102, 102, 0));
         jPanel3.setLayout(null);
 
         pid.setEnabled(false);
@@ -193,11 +158,13 @@ public class products extends javax.swing.JFrame {
         pid.setBounds(30, 80, 140, 30);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Product ID:");
         jPanel3.add(jLabel1);
         jLabel1.setBounds(20, 60, 90, 17);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Product Name :");
         jPanel3.add(jLabel3);
         jLabel3.setBounds(20, 120, 110, 17);
@@ -207,11 +174,13 @@ public class products extends javax.swing.JFrame {
         pname.setBounds(30, 140, 150, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Date :");
         jPanel3.add(jLabel5);
         jLabel5.setBounds(20, 250, 50, 17);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Order Status :");
         jPanel3.add(jLabel6);
         jLabel6.setBounds(20, 320, 100, 17);
@@ -223,6 +192,7 @@ public class products extends javax.swing.JFrame {
         us.setBounds(30, 340, 150, 30);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Oders Table");
         jPanel3.add(jLabel7);
         jLabel7.setBounds(220, 20, 100, 17);
@@ -245,20 +215,21 @@ public class products extends javax.swing.JFrame {
         jPanel3.add(jScrollPane1);
         jScrollPane1.setBounds(220, 40, 310, 402);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-add-25.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-add-25 (1).png"))); // NOI18N
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
             }
         });
         jPanel3.add(jLabel8);
-        jLabel8.setBounds(180, 80, 25, 25);
+        jLabel8.setBounds(170, 80, 25, 30);
 
         odate.setEnabled(false);
         jPanel3.add(odate);
         odate.setBounds(30, 280, 150, 30);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Quantity :");
         jPanel3.add(jLabel9);
         jLabel9.setBounds(20, 180, 110, 22);
@@ -268,7 +239,23 @@ public class products extends javax.swing.JFrame {
         jPanel2.add(jPanel3);
         jPanel3.setBounds(270, 70, 540, 460);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, 850, 560));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("BACK");
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(770, 20, 50, 17);
+
+        jLabel10.setFont(new java.awt.Font("Wide Latin", 0, 18)); // NOI18N
+        jLabel10.setText("PRODUCTS");
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(20, 20, 200, 19);
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 560));
 
         pack();
         setLocationRelativeTo(null);
@@ -289,12 +276,6 @@ public class products extends javax.swing.JFrame {
        }
         
     }//GEN-LAST:event_formWindowActivated
-
-    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
-         loginForm lf = new loginForm();
-        lf.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jPanel7MouseClicked
 
     private void oTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oTableMouseClicked
         int rowIndex = oTable.getSelectedRow();
@@ -346,6 +327,16 @@ public class products extends javax.swing.JFrame {
                 }      
     }//GEN-LAST:event_addActionPerformed
 
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        userDashboard usd = new userDashboard();
+        usd.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel4MouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -381,10 +372,10 @@ public class products extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel acc_name;
-    private javax.swing.JLabel acc_name1;
     private javax.swing.JButton add;
     private javax.swing.JButton delete;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -396,7 +387,6 @@ public class products extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable oTable;
     private javax.swing.JTextField odate;
